@@ -1,29 +1,54 @@
-import React, { useState } from 'react';
-import { NativeSyntheticEvent, SafeAreaView, StyleSheet, TextInput, TextInputChangeEventData } from 'react-native';
+
+import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
 
 
 const styles = StyleSheet.create({
   container: {
     color: 'blue',
+    fontSize: 30,
+    flexDirection: 'row',
   },
   input: {
     backgroundColor: '#ddd',
     margin: 16,
+  },
+  scroll: {
+    backgroundColor: 'green',
+    height: 100,
   },
 });
 
 
 const App = () => {
 
-  const [value, setValue] = useState<string>('');
 
-  const handleOnChangeInput = (event: NativeSyntheticEvent<TextInputChangeEventData>) => {
-    setValue(event.nativeEvent.text);
-  };
+
   return (
     <SafeAreaView>
-      <TextInput
-        onChange={handleOnChangeInput} value={value} style={styles.input} />
+      <ScrollView horizontal style={styles.scroll} >
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+        <Text style={styles.container}>Testando</Text>
+
+      </ScrollView>
     </SafeAreaView>
   );
 };

@@ -1,43 +1,29 @@
-import React, { } from 'react';
-import { SafeAreaView, Text, Button, View, StyleSheet } from 'react-native';
-import { useApp } from './useApp';
+import React, { useState } from 'react';
+import { NativeSyntheticEvent, SafeAreaView, StyleSheet, TextInput, TextInputChangeEventData } from 'react-native';
 
 
 const styles = StyleSheet.create({
   container: {
     color: 'blue',
   },
-  view1: {
-    display: 'flex',
-    backgroundColor: 'blue',
-    padding: 24,
-    flexDirection: 'row',
-  },
-  view2: {
-    backgroundColor: 'pink',
-  },
-  text: {
-    fontSize: 30,
-    color: 'blue',
+  input: {
+    backgroundColor: '#ddd',
+    margin: 16,
   },
 });
 
 
 const App = () => {
-  const { handleOnPress, value } = useApp();
 
+  const [value, setValue] = useState<string>('');
+
+  const handleOnChangeInput = (event: NativeSyntheticEvent<TextInputChangeEventData>) => {
+    setValue(event.nativeEvent.text);
+  };
   return (
     <SafeAreaView>
-      <View style={styles.view1}>
-        <View style={styles.view2}>
-          <Text style={styles.text}>Novo Teste</Text>
-        </View>
-        <View style={styles.view2}>
-          <Text>Novo Teste</Text>
-        </View>
-      </View>
-      <Text>{value}</Text>
-      <Button title="BOTAO" onPress={handleOnPress} />
+      <TextInput
+        onChange={handleOnChangeInput} value={value} style={styles.input} />
     </SafeAreaView>
   );
 };

@@ -18,12 +18,8 @@ const styles = StyleSheet.create({
 const App = () => {
   return (
     <SafeAreaView>
-      <Example>{'Children Teste'}</Example>
+      <Example text="ABC">Titulo children</Example>
 
-      <Example>{'jOÃO Children Teste'}</Example>
-
-
-      <Text style={styles.container}>Testando</Text>
       <TextNew>Novo Teste</TextNew>
     </SafeAreaView>
   );

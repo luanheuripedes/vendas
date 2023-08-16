@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
   view2: {
     backgroundColor: 'pink',
   },
+  text: {
+    fontSize: 30,
+    color: 'blue',
+  },
 });
 
 
@@ -26,7 +30,7 @@ const App = () => {
     <SafeAreaView>
       <View style={styles.view1}>
         <View style={styles.view2}>
-          <Text>Novo Teste</Text>
+          <Text style={styles.text}>Novo Teste</Text>
         </View>
         <View style={styles.view2}>
           <Text>Novo Teste</Text>

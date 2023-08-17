@@ -1,12 +1,14 @@
-
-import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
+import React, { } from 'react';
+import { FlatList, SafeAreaView, StyleSheet, Text } from 'react-native';
 
 
 const styles = StyleSheet.create({
   container: {
     color: 'blue',
     fontSize: 30,
-    flexDirection: 'row',
+  },
+  flat: {
+    backgroundColor: '#ddd',
   },
   input: {
     backgroundColor: '#ddd',
@@ -18,6 +20,57 @@ const styles = StyleSheet.create({
   },
 });
 
+const list: string[] = [
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+  'text1',
+];
+
 
 const App = () => {
 
@@ -25,30 +78,10 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      <ScrollView horizontal style={styles.scroll} >
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
-        <Text style={styles.container}>Testando</Text>
+      <FlatList style={styles.flat}
+        data={list}
+        renderItem={({ item }) => <Text style={styles.container}>{item}</Text>} />
 
-      </ScrollView>
     </SafeAreaView>
   );
 };

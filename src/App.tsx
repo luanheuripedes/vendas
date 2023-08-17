@@ -1,5 +1,5 @@
 import React, { } from 'react';
-import { FlatList, SafeAreaView, StyleSheet, Text } from 'react-native';
+import { FlatList, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
 const styles = StyleSheet.create({
@@ -18,69 +18,29 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
     height: 100,
   },
+  touchable:{
+    backgroundColor: 'blue',
+    padding: 16,
+    borderRadius:4,
+    margin:16,
+  },
 });
 
-const list: string[] = [
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-  'text1',
-];
 
 
 const App = () => {
-
+  const handleOnClick = () =>{
+console.log('Passou o click');
+  };
 
 
   return (
     <SafeAreaView>
-      <FlatList style={styles.flat}
-        data={list}
-        renderItem={({ item }) => <Text style={styles.container}>{item}</Text>} />
+      <TouchableOpacity onPress={handleOnClick} style = {styles.touchable}>
+        <View>
+          <Text>Clicar</Text>
+        </View>
+      </TouchableOpacity>
 
     </SafeAreaView>
   );
